@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+    <script>
+        function calculateAge() {
+            const birthDate = new Date(document.getElementById('birthdate').value);
+            const today = new Date();
+
+            const ageInMilliseconds = today - birthDate;
+            const ageInDays = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24));
+            const ageInWeeks = Math.floor(ageInDays / 7);
+            const ageInMonths = (today.getFullYear() - birthDate.getFullYear()) * 12 + (today.getMonth() - birthDate.getMonth());
+            const ageInYears = today.getFullYear() - birthDate.getFullYear();
+
+            if (
+                today.getMonth() < birthDate.getMonth() ||
+                (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())
+            ) {
+                ageInYears--;
+            }
+
+            document.getElementById('years').innerText = ageInYears;
+            document.getElementById('months').innerText = ageInMonths;
+            document.getElementById('weeks').innerText = ageInWeeks;
+            document.getElementById('days').innerText = ageInDays;
+        }
+    </script>
+</head>
+<body>
+    <div class="block">
+        <h1 class="heading">Age Calculator <img src="heart.png" alt="heart" height="20"></h1>
+        <div class="content">
+            <input id="birthdate" class="input" type="date" required>
+            <button onclick="calculateAge()">Submit</button>
+            <h2>Your Age in Years: <span id="years"></span></h2>
+            <h2>Your Age in Months: <span id="months"></span></h2>
+            <h2>Your Age in Weeks: <span id="weeks"></span></h2>
+            <h2>Your Age in Days: <span id="days"></span></h2>
+        </div>
+    </div>
+</body>
+</html>

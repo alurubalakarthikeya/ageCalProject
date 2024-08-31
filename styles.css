@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Handjet", sans-serif;
+    color: red;
+    height: 95vh;
+    border: 2px solid red;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.content {
+    margin-top: 30%;
+}
+
+button {
+    margin: 20px;
+    border: 1px solid red;
+    padding: 20px;
+    color: white;
+    background-color: red;
+}
+
+.input {
+    margin: 20px;
+    border: 1px solid red;
+    padding: 20px;
+    color: red;
+    background-color: white;
+}
+
+button:hover {
+    background-color: white;
+    color: red;
+}
+
+.input:hover {
+    background-color: red;
+    color: white;
+}
+
+.output {
+    background-color: red;
+}
