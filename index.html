@@ -12,20 +12,17 @@
         function calculateAge() {
             const birthDate = new Date(document.getElementById('birthdate').value);
             const today = new Date();
-
             const ageInMilliseconds = today - birthDate;
             const ageInDays = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24));
             const ageInWeeks = Math.floor(ageInDays / 7);
             const ageInMonths = (today.getFullYear() - birthDate.getFullYear()) * 12 + (today.getMonth() - birthDate.getMonth());
             const ageInYears = today.getFullYear() - birthDate.getFullYear();
-
             if (
                 today.getMonth() < birthDate.getMonth() ||
                 (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())
             ) {
                 ageInYears--;
             }
-
             document.getElementById('years').innerText = ageInYears;
             document.getElementById('months').innerText = ageInMonths;
             document.getElementById('weeks').innerText = ageInWeeks;
@@ -37,12 +34,13 @@
     <div class="block">
         <h1 class="heading">Age Calculator <img src="heart.png" alt="heart" height="20"></h1>
         <div class="content">
-            <input id="birthdate" class="input" type="date" required>
-            <button onclick="calculateAge()">Submit</button>
+            <input id="birthdate" class="input" type="date" required placeholder="Enter your DOB">
+            <button onclick="calculateAge()"><span class="font-issue">Submit</span></button>
             <h2>Your Age in Years: <span id="years"></span></h2>
             <h2>Your Age in Months: <span id="months"></span></h2>
             <h2>Your Age in Weeks: <span id="weeks"></span></h2>
-            <h2>Your Age in Days: <span id="days"></span></h2>
+            <h2>Your Age in Days: <span id="days"></span></h2><br>
+            @designed by Aluru Bala Karthikeya
         </div>
     </div>
 </body>

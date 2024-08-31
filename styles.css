@@ -11,6 +11,10 @@ body {
     margin: 20px;
 }
 
+.font-issue {
+    font-family: "Handjet", sans-serif;
+}
+
 .content {
     margin-top: 30%;
 }
